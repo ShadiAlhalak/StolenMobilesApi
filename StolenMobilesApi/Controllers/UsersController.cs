@@ -9,7 +9,7 @@ namespace StolenMobilesApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MangmentUsers : ControllerBase
+    public class UsersController : ControllerBase
     {
         [HttpGet]
         public ActionResult<List<Users>> GetUsers()
