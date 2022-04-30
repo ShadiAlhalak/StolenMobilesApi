@@ -50,6 +50,8 @@ namespace StolenMobilesApi.Controllers
         [HttpPost("ADDMobile")]
         public ActionResult ADDMobile([FromBody] Mobiles Mobile)
         {
+            //note : when pass Mobile parametar pass it without id because id auto increment
+
             if (Mobile is null)
                 return BadRequest();
             using (StolenContext db = new StolenContext())
@@ -87,6 +89,7 @@ namespace StolenMobilesApi.Controllers
         [HttpPut]
         public ActionResult Update(Mobiles Updated_Mobile)
         {
+            //note : when pass Updated_Mobile parametar pass it without id because id auto increment
             using (StolenContext db = new StolenContext())
             {
                 var old_Mobile = db.Mobiles.ToList().Find(User => User.Id == Updated_Mobile.Id);

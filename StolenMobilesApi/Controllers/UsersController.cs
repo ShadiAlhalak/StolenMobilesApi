@@ -34,6 +34,7 @@ namespace StolenMobilesApi.Controllers
         [HttpPost("SignUp")]
         public ActionResult SignUp([FromBody] Users User)
         {
+            //note : when pass User parametar pass it without id because id auto increment
             if (User is null)
                 return BadRequest();
             using (StolenContext db = new StolenContext())
@@ -82,6 +83,7 @@ namespace StolenMobilesApi.Controllers
         [HttpPut]
         public ActionResult Update( Users Updated_user)
         {
+            //note : when pass Updated_user parametar pass it without id because id auto increment
             using (StolenContext db = new StolenContext())
             {
                 var old_user = db.Users.ToList().Find(User => User.Id == Updated_user.Id);

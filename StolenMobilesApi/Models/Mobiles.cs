@@ -34,9 +34,5 @@ namespace StolenMobilesApi.Models
         [Column(TypeName = "nvarchar(max)")]
         public string IMEI { get; set; }
 
-        //public static explicit operator List<object>(Mobiles v)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }
