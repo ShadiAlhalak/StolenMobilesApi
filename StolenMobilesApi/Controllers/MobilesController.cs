@@ -47,6 +47,19 @@ namespace StolenMobilesApi.Controllers
             }
         }
 
+        [HttpGet("GetSpecificMobile")]
+        public ActionResult<Mobiles> GetSpecificMobile(int UserId ,int MobileId)
+        {
+            using (StolenContext db = new StolenContext())
+            {
+                var Mobile = db.Mobiles.ToList().Find(Mobile => Mobile.Id == MobileId & Mobile.UserId==UserId);
+                if (Mobile is null) return NotFound();
+
+                return Mobile;
+
+            }
+        }
+
         [HttpPost("ADDMobile")]
         public ActionResult ADDMobile([FromBody] Mobiles Mobile)
         {
