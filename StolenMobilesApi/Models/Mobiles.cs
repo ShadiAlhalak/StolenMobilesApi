@@ -27,8 +27,8 @@ namespace StolenMobilesApi.Models
         [Column(TypeName = "nvarchar(max)")]
         public string StolenIn { get; set; }
 
-        [Column(TypeName = "nvarchar(max)")]
-        public string Image { get; set; }
+        [Display(Name = "MobileImage")]
+        public Images Image { get; set; }
 
         [Required]
         [Column(TypeName = "nvarchar(max)")]

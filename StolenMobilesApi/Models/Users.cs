@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StolenMobilesApi.Models
 {
-    [Table("Users",Schema ="dbo")]
+    //[Index(nameof(Email), IsUnique = true)]
+    [Table("Users", Schema = "dbo")]
     public class Users
     {
         [Key]
@@ -18,7 +20,7 @@ namespace StolenMobilesApi.Models
         [Required]
         [Column(TypeName = "nvarchar(max)")]
         public string UserPassword { get; set; }
-
+        
         [Required]
         [EmailAddress]
         [Column(TypeName = "nvarchar(max)")]
